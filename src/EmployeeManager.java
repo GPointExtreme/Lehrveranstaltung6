@@ -18,6 +18,15 @@ public class EmployeeManager {
 			return found;
 		}
 		
+		//findet ein opjekt und man kann damit weiter arbeiten
+		public Employee find(Employee e) {
+			int index = employees.indexOf(e);
+				if(index == -1) {
+					return null;
+				}
+				return employees.get(index);
+		}
+		
 		public ArrayList<Employee> findByDepartment(String department) {
 			ArrayList<Employee> sameDept = new ArrayList<>();
 		
@@ -39,5 +48,9 @@ public class EmployeeManager {
 				}
 			}
 			return found;
-		}		
+		}	
+		
+		public ArrayList<Employee> getAllEmployees() {
+			return employees;
+		}
 	}
